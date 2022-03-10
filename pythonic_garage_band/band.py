@@ -2,6 +2,19 @@ from abc import ABC, abstractmethod
 
 
 class Band:
+    """
+    This class is a stand alone class, that has attributes and methods.
+
+    it also has magic methods: (__init__) , (__str__) , (__repr__) to help with defining the attributes
+    and make a representation of all instances of this class.
+
+    the functionality of this class is that it should return a list of all previously created band instances
+    using (to_list) method by appending the instances into a list called (instances).
+
+    it also has a method (play_solos()) that loops through a created class list called (members) and calls
+    another method (play_solo()) -which is defined in later classes below- for each on of them.
+
+    """
 
     instances = []
     members = []
@@ -29,6 +42,20 @@ class Band:
 
 
 class Musician:
+
+    """
+    This class is a super class or a parent class, that has attributes and methods.
+
+    it also has magic methods: (__init__) , (__str__) , (__repr__) to help with defining the attributes
+    and make a representation of all instances of this class.
+
+    other classes (Guitarist, Bassist, Drummer) inherit from this class, and they have access to all its
+    attributes and methods ----> that's am using @abstractmethod because for some methods I don't want to
+    work on them here from the super class but rather, let each child class define them as it suits it.
+    Those methods are below and have @abstractmethod written above them.
+
+    """
+
     def __init__(self, name, instrument):
         self.name = name
         self.instrument = instrument
@@ -49,6 +76,18 @@ class Musician:
 
 
 class Guitarist(Musician):
+
+    """
+    This class is a child class, that gets its attributes and methods by inherting from Musician class.
+
+    it also has magic methods: (__init__) , (__str__) , (__repr__) to help with defining the attributes
+    and make a representation of all instances of this class.
+
+    here I'm defining each method the Guitarist class inherted from the super class (Musician), in the way that
+    best suits this class alone. Taking into count that the Guitarist instrument is "guitar".
+
+    """
+
     def __init__(self, name):
         self.name = name
         self.instrument = "guitar"
@@ -67,6 +106,18 @@ class Guitarist(Musician):
 
 
 class Bassist(Musician):
+
+    """
+    This class is a child class, that gets its attributes and methods by inherting from Musician class.
+
+    it also has magic methods: (__init__) , (__str__) , (__repr__) to help with defining the attributes
+    and make a representation of all instances of this class.
+
+    here I'm defining each method the Bassist class inherted from the super class (Musician), in the way that
+    best suits this class alone. Taking into count that the Bassist instrument is "bass".
+
+    """
+
     def __init__(self, name):
         self.name = name
         self.instrument = "bass"
@@ -85,6 +136,18 @@ class Bassist(Musician):
 
 
 class Drummer(Musician):
+
+    """
+    This class is a child class, that gets its attributes and methods by inherting from Musician class.
+
+    it also has magic methods: (__init__) , (__str__) , (__repr__) to help with defining the attributes
+    and make a representation of all instances of this class.
+
+    here I'm defining each method the Drummer class inherted from the super class (Musician), in the way that
+    best suits this class alone. Taking into count that the Drummer instrument is "drums".
+
+    """
+
     def __init__(self, name):
         self.name = name
         self.instrument = "drums"
